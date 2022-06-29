@@ -68,7 +68,7 @@ struct MainContainer: View {
                     .padding(.horizontal, 20)
                 
                 if viewModel.isWrongChain {
-                    Text("Connected to wrong chain. Please connect to Polygon")
+                    Text("Connected to wrong chain. Please connect to BSC")
                         .font(.system(size: 17))
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)

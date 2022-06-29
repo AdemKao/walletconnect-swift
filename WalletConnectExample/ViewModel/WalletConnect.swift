@@ -30,7 +30,7 @@ class WalletConnect {
                                             url: URL(string: "https://medium.com")!)
         let dAppInfo = Session.DAppInfo(peerId: UUID().uuidString,
                                         peerMeta: clientMeta,
-                                        chainId: 137) // Polygon chain
+                                        chainId: 56) // 56:BSC chain//137:Polygon chain
         client = Client(delegate: self, dAppInfo: dAppInfo)
         try! client.connect(to: wcUrl)
         return wcUrl.fullyPercentEncodedStr

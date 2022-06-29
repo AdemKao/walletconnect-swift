@@ -38,7 +38,7 @@ class ExampleViewModel: ObservableObject {
     
     //Checking that connected to Polygon chain
     var isWrongChain: Bool {
-        if let chainId = session?.walletInfo?.chainId, chainId != 137 {
+        if let chainId = session?.walletInfo?.chainId, chainId != 56 {
             return true
         }
         return false

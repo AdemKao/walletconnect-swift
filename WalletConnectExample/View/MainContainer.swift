@@ -92,6 +92,40 @@ struct MainContainer: View {
                     }
                     .padding(.horizontal, 30)
                     .padding(.top, 30)
+                    Button {
+                        viewModel.callcontract()
+                    } label: {
+                        HStack {
+                            Spacer()
+                            Text("Interact contract")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.white)
+                            Spacer()
+                        }
+                        .padding(.vertical, 15)
+                        .background(Color.blue)
+                        .cornerRadius(32)
+                    }
+                    .padding(.horizontal, 30)
+                    .padding(.top, 30)
+                    Button {
+                        viewModel.swap()
+                    } label: {
+                        HStack {
+                            Spacer()
+                            Text("Swap AFFINITY")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.white)
+                            Spacer()
+                        }
+                        .padding(.vertical, 15)
+                        .background(Color.blue)
+                        .cornerRadius(32)
+                    }
+                    .padding(.horizontal, 30)
+                    .padding(.top, 30)
                 }
                 
                 Button {

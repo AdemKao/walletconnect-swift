@@ -1,1 +1,4 @@
-# wallet-connect-swift-example
+# wallet-connect-swift-exampl
+
+ add interact contract function
+e

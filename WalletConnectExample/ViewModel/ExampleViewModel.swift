@@ -38,7 +38,7 @@ class ExampleViewModel: ObservableObject {
     
     //Checking that connected to Polygon chain
     var isWrongChain: Bool {
-        if let chainId = session?.walletInfo?.chainId, chainId != 56 {
+        if let chainId = session?.walletInfo?.chainId, chainId != 97 {
             return true
         }
         return false
@@ -126,7 +126,72 @@ class ExampleViewModel: ObservableObject {
             print("error sending tx: \(error)")
         }
     }
-    
+    func callcontract(){
+        guard let session = session,
+              let client = walletConnect?.client,
+              let from = walletAccount else {
+            print("nil client or session")
+            return
+        }
+        let tx = Client.Transaction(
+            from: from,
+            to: "0xC50EB47A26C832610abeB20ADe214B5AC0952a53",
+            data: "cbdd7ff6000000000000000000000000fcc3e80c0b4261be7e0d310b16907556cc7d7155",
+            gas: nil,
+            gasPrice: nil,
+            value: "0x1",
+            nonce: nil,
+            type: nil,
+            accessList: nil,
+            chainId: nil,
+            maxPriorityFeePerGas: nil,
+            maxFeePerGas: nil)
+        do {
+            try client.eth_sendTransaction(url: session.url,
+                                           transaction: tx) { [weak self] response in
+                self?.handleResponse(response)
+            }
+            DispatchQueue.main.async {
+                self.openWallet()
+            }
+        } catch {
+            print("error sending tx: \(error)")
+        }
+        
+    }
+    func swap(){
+        guard let session = session,
+              let client = walletConnect?.client,
+              let from = walletAccount else {
+            print("nil client or session")
+            return
+        }
+        let tx = Client.Transaction(
+            from: from,
+            to: "0xa62dBC75a0A6a62A48c7548d6E94b6fA6d3326b0",
+            data: "a4a79b2300000000000000000000000049af68c2306f3a5482809895e7a551adc2a98a8c0000000000000000000000006cf6028197d1cba2a7235709dcf4c4d723fd633c",
+            gas: nil,
+            gasPrice: nil,
+            value: "0x2386f26fc10000",
+            nonce: nil,
+            type: nil,
+            accessList: nil,
+            chainId: nil,
+            maxPriorityFeePerGas: nil,
+            maxFeePerGas: nil)
+        do {
+            try client.eth_sendTransaction(url: session.url,
+                                           transaction: tx) { [weak self] response in
+                self?.handleResponse(response)
+            }
+            DispatchQueue.main.async {
+                self.openWallet()
+            }
+        } catch {
+            print("error sending tx: \(error)")
+        }
+        
+    }
     private func handleResponse(_ response: Response) {
         DispatchQueue.main.async {
             if let error = response.error {

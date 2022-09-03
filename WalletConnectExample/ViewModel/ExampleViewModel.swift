@@ -192,6 +192,12 @@ class ExampleViewModel: ObservableObject {
         }
         
     }
+    func test()-> String{
+        let provider = web3Provider()
+        //provider.testSending()
+        return (provider?.abitest())!
+    }
+    
     private func handleResponse(_ response: Response) {
         DispatchQueue.main.async {
             if let error = response.error {

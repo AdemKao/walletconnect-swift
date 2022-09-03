@@ -16,6 +16,12 @@
 		11BE8D072855F2C30088F261 /* MainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE8D062855F2C30088F261 /* MainContainer.swift */; };
 		11BE8D092855F2D40088F261 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE8D082855F2D40088F261 /* Wallet.swift */; };
 		11BE8D0D2856025D0088F261 /* WalletConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE8D0C2856025D0088F261 /* WalletConnect.swift */; };
+		55EB4D0528C38AD5004D3420 /* web3swift in Frameworks */ = {isa = PBXBuildFile; productRef = 55EB4D0428C38AD5004D3420 /* web3swift */; };
+		55EB4D0728C38AF1004D3420 /* web3Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EB4D0628C38AF1004D3420 /* web3Provider.swift */; };
+		55EB4D0A28C38D85004D3420 /* ContractCompoents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EB4D0928C38D85004D3420 /* ContractCompoents.swift */; };
+		55EB4D0C28C38E5E004D3420 /* ContractHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EB4D0B28C38E5E004D3420 /* ContractHelpers.swift */; };
+		55EB4D0E28C38E98004D3420 /* Networks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EB4D0D28C38E98004D3420 /* Networks.swift */; };
+		55EB4D1028C38EB6004D3420 /* ProjectContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EB4D0F28C38EB6004D3420 /* ProjectContract.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,11 @@
 		11BE8D062855F2C30088F261 /* MainContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainer.swift; sourceTree = "<group>"; };
 		11BE8D082855F2D40088F261 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		11BE8D0C2856025D0088F261 /* WalletConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletConnect.swift; sourceTree = "<group>"; };
+		55EB4D0628C38AF1004D3420 /* web3Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = web3Provider.swift; sourceTree = "<group>"; };
+		55EB4D0928C38D85004D3420 /* ContractCompoents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractCompoents.swift; sourceTree = "<group>"; };
+		55EB4D0B28C38E5E004D3420 /* ContractHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractHelpers.swift; sourceTree = "<group>"; };
+		55EB4D0D28C38E98004D3420 /* Networks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networks.swift; sourceTree = "<group>"; };
+		55EB4D0F28C38EB6004D3420 /* ProjectContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectContract.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +47,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11BE8D022855F2410088F261 /* WalletConnectSwift in Frameworks */,
+				55EB4D0528C38AD5004D3420 /* web3swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +73,7 @@
 		11BE8CEF2855ED270088F261 /* WalletConnectExample */ = {
 			isa = PBXGroup;
 			children = (
+				55EB4D0828C38D66004D3420 /* SmartContract */,
 				11BE8D052855F2A60088F261 /* View */,
 				11BE8D042855F29B0088F261 /* Model */,
 				11BE8D032855F2940088F261 /* ViewModel */,
@@ -84,6 +97,7 @@
 			children = (
 				11BE8CFE2855F1850088F261 /* ExampleViewModel.swift */,
 				11BE8D0C2856025D0088F261 /* WalletConnect.swift */,
+				55EB4D0628C38AF1004D3420 /* web3Provider.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -105,6 +119,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		55EB4D0828C38D66004D3420 /* SmartContract */ = {
+			isa = PBXGroup;
+			children = (
+				55EB4D0928C38D85004D3420 /* ContractCompoents.swift */,
+				55EB4D0B28C38E5E004D3420 /* ContractHelpers.swift */,
+				55EB4D0D28C38E98004D3420 /* Networks.swift */,
+				55EB4D0F28C38EB6004D3420 /* ProjectContract.swift */,
+			);
+			path = SmartContract;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -123,6 +148,7 @@
 			name = WalletConnectExample;
 			packageProductDependencies = (
 				11BE8D012855F2410088F261 /* WalletConnectSwift */,
+				55EB4D0428C38AD5004D3420 /* web3swift */,
 			);
 			productName = WalletConnectExample;
 			productReference = 11BE8CED2855ED270088F261 /* WalletConnectExample.app */;
@@ -154,6 +180,7 @@
 			mainGroup = 11BE8CE42855ED270088F261;
 			packageReferences = (
 				11BE8D002855F2410088F261 /* XCRemoteSwiftPackageReference "WalletConnectSwift" */,
+				55EB4D0328C38AD5004D3420 /* XCRemoteSwiftPackageReference "web3swift" */,
 			);
 			productRefGroup = 11BE8CEE2855ED270088F261 /* Products */;
 			projectDirPath = "";
@@ -181,10 +208,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55EB4D0A28C38D85004D3420 /* ContractCompoents.swift in Sources */,
 				11BE8D092855F2D40088F261 /* Wallet.swift in Sources */,
+				55EB4D0E28C38E98004D3420 /* Networks.swift in Sources */,
+				55EB4D1028C38EB6004D3420 /* ProjectContract.swift in Sources */,
+				55EB4D0728C38AF1004D3420 /* web3Provider.swift in Sources */,
 				11BE8CF32855ED270088F261 /* ContentView.swift in Sources */,
 				11BE8CFF2855F1850088F261 /* ExampleViewModel.swift in Sources */,
 				11BE8D0D2856025D0088F261 /* WalletConnect.swift in Sources */,
+				55EB4D0C28C38E5E004D3420 /* ContractHelpers.swift in Sources */,
 				11BE8D072855F2C30088F261 /* MainContainer.swift in Sources */,
 				11BE8CF12855ED270088F261 /* WalletConnectExampleApp.swift in Sources */,
 			);
@@ -397,6 +429,14 @@
 				kind = branch;
 			};
 		};
+		55EB4D0328C38AD5004D3420 /* XCRemoteSwiftPackageReference "web3swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/skywinder/web3swift.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -404,6 +444,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 11BE8D002855F2410088F261 /* XCRemoteSwiftPackageReference "WalletConnectSwift" */;
 			productName = WalletConnectSwift;
+		};
+		55EB4D0428C38AD5004D3420 /* web3swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55EB4D0328C38AD5004D3420 /* XCRemoteSwiftPackageReference "web3swift" */;
+			productName = web3swift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

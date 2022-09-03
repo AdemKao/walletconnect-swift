@@ -1,0 +1,22 @@
+//
+//  ContractCompoents.swift
+//  WalletConnectExample
+//
+//  Created by Adem Kao on 2022/9/3.
+//
+
+import Foundation
+
+// Methods available within the contract
+enum ContractMethods:String {
+
+    case transferToken = "transferToken"
+    case transferUtility = "transferUtility"
+}
+//bsc test net sendContract
+let contractAddress = "0x3b5AA689f6840904708D2b07B5089b7b57daac46"
+
+let contractABI =
+    """
+[{"inputs":[{"internalType":"address","name":"_feeWallet","type":"address"},{"internalType":"uint256","name":"_fee","type":"uint256"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"_newToken","type":"address"}],"name":"defaultTokenAdded","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"uint256","name":"_newVal","type":"uint256"}],"name":"feeSet","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"_newVal","type":"address"}],"name":"feeWalletSet","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"_token","type":"address"},{"indexed":false,"internalType":"uint256","name":"_amt","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_fee","type":"uint256"},{"indexed":false,"internalType":"address","name":"_from","type":"address"},{"indexed":false,"internalType":"address","name":"_to","type":"address"}],"name":"tokenTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"uint256","name":"_amt","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_fee","type":"uint256"},{"indexed":false,"internalType":"address","name":"_from","type":"address"},{"indexed":false,"internalType":"address","name":"_to","type":"address"}],"name":"utilityTransferred","type":"event"},{"inputs":[{"internalType":"address","name":"_newToken","type":"address"}],"name":"addDefaultToken","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"fetchDefaultTokens","outputs":[{"internalType":"address[]","name":"","type":"address[]"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_newVal","type":"uint256"}],"name":"setFee","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_newVal","type":"address"}],"name":"setFeeWallet","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_token","type":"address"},{"internalType":"address","name":"_to","type":"address"},{"internalType":"uint256","name":"_amt","type":"uint256"}],"name":"transferToken","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_to","type":"address"}],"name":"transferUtility","outputs":[],"stateMutability":"payable","type":"function"}]
+"""

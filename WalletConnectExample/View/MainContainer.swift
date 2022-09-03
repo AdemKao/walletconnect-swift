@@ -8,16 +8,37 @@
 import SwiftUI
 
 struct MainContainer: View {
+    @State var hexValue:String
     
     @EnvironmentObject
     var viewModel: ExampleViewModel
-    
     var body: some View {
         VStack(spacing: 0) {
             if viewModel.session == nil {
+                Text("testHASH")
+                Text(hexValue)
+                Button {
+                    hexValue = viewModel.test()
+                } label: {
+                    HStack {
+                        Spacer()
+                        Text("TEST HASH")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.white)
+                        Spacer()
+                    }
+                    .padding(.vertical, 15)
+                    .background(Color.blue)
+                    .cornerRadius(32)
+                }
+                
                 Text("Connect to:")
                     .font(.system(size: 17))
                     .fontWeight(.bold)
+               
+                .padding(.horizontal, 30)
+                .padding(.vertical, 24)
                 
                 Button {
                     viewModel.connect(wallet: Wallets.TrustWallet)
